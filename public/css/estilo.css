@@ -1,0 +1,99 @@
+.menu{
+    background: white !important;
+}
+
+.nav-items a{ 
+    color: #333 !important;
+}
+
+.page{
+    
+    background: #F8EEEF;
+}
+
+
+
+.btn-icone:focus{
+    background: rgb(218, 16, 16) !important;
+    text-decoration:none;outline:0;box-shadow:0 0 0 .25rem
+}
+
+.imagemdetalhe{
+    object-fit: contain !important;
+
+}
+
+
+.nav-item{
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+.titulo-detalhe{
+    font-size: 30pt;
+}
+
+.preco-detalhe{
+    margin-top: -20px;
+    font-size: 20pt;
+    color: #b65f13;
+}
+.ingred li{
+    color: rgb(100, 100, 100);
+}
+
+.desc{
+    font-size: 12pt; font-weight: 700;
+    color: rgb(170, 170, 170);
+}
+.dropdown-menu{
+    border: 0px !important;
+}
+
+/* ----- BUTTONS ----- */
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    
+    margin-top: 20px;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}

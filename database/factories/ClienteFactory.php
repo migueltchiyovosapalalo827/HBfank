@@ -1,0 +1,22 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ClienteFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'nome' => $this->faker->name(),
+            'telefone' => $this->faker->unique()->phoneNumber(),
+            'bairro_id' => 1
+        ];
+    }
+}
