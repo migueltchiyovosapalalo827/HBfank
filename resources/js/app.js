@@ -1,6 +1,3 @@
-
-
-
 import { createApp, h, computed  } from 'vue';
 require('./bootstrap');
 import moment from 'moment';

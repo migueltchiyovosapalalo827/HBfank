@@ -5,7 +5,7 @@
             <div class="bg-image parallax-bg"></div>
             <div class="header-content">
                 <div class="hero-text-box">
-                    <h1>Goodbye junk food.<br>Hello super healthy meals.</h1>
+
                     <a class="btn my-4 btn-full js--scroll-to-plans" href="#menu">estou com fome</a>
                 </div>
             </div>
@@ -16,34 +16,7 @@
 
             <br><br>
 
-            <div class="row d-flex justify-content-md-between">
-                <div class="feature col-md-5 cartao ">
-                    <div class="feature-icon">
-                        <img src="/assets/img/icon-chapeu.png" class="my-2" alt="Bootstrap" width="82" height="82">
-                    </div>
-                    <h3 class="titulo-feature py-2">100% garantia de satisfação</h3>
-                    <p class="card p-md-2">Paragraph of text beneath the heading to explain the heading. We'll add onto
-                        it with another sentence and
-                        probably just keep going until we run out of words.Paragraph of text beneath the heading to
-                        explain the heading. We'll add onto it with another sentence and
-                        probably just keep going until we run out of words.Paragraph of text beneath the heading to
-                        explain the heading. We'll add onto it with another sentence and
-                        probably just keep going until we run out of words.</p>
-                </div>
-                <div class="feature col-md-5 cartao">
-                    <div class="feature-icon">
-                        <img src="/assets/img/icon-chapeu.png" class="my-2" alt="Bootstrap" width="82" height="82">
-                    </div>
-                    <h3 class="titulo-feature py-2">100% garantia de satisfação</h3>
-                    <p class="card p-md-2">Paragraph of text beneath the heading to explain the heading. We'll add onto
-                        it with another sentence and
-                        probably just keep going until we run out of words.Paragraph of text beneath the heading to
-                        explain the heading. We'll add onto it with another sentence and
-                        probably just keep going until we run out of words.Paragraph of text beneath the heading to
-                        explain the heading. We'll add onto it with another sentence and
-                        probably just keep going until we run out of words.</p>
-                </div>
-            </div>
+
         </div>
         <div class="col-md-12 menu-prod" id="menu">
             <h1 class="lead titulo">NOSSO MENU</h1>
@@ -56,15 +29,13 @@
            <div class="card card-menu" style="width: 18rem;">
                             <img :src="`${producto.productoimagens[0].url}`"  class="card-img card-img-top" :alt="`${producto.nome}`">
                             <div class="card-overlay">
-                                <h5 class="card-title card-titulo px-3">{{producto.preco}}</h5>
+                                <h5 class="card-title card-titulo px-3">{{producto.preco}} kz</h5>
                             </div>
                             <div class="card-body">
-                                    <h5 class="card-title">{{producto.nome}}</h5>
-                                <p class="card-text">{{producto.descricao}}
-                                </p>
-                                <button @click="addCartItem(producto)"  class="btn btn-color mb-2">Adicionar ao carrinho</button>
-                                <a class="btn btn-ghost js--scroll-to-start" href="detalhes.html">Detalhes</a>
+                                <h5 class="card-title">{{producto.nome}}</h5>
 
+                                <button @click="addCartItem(producto)"  class="btn btn-color mb-2">Adicionar ao carrinho</button>
+                                <router-link :to="{ name: 'detalhe', params: { id: producto.id } }" class="btn btn-ghost js--scroll-to-start">Detalhes</router-link>
                             </div>
                         </div>
                     </div>
@@ -77,62 +48,7 @@
             </div>
         </div>
 
-        <section class="section-form form-contacto">
-            <div class="row">
-                <h1 class="lead titulo">ESTAREMOS FELIZES EM ATENDE-LO</h1>
-            </div><br><br>
-            <div class="row">
-                <form method="post" action="#" class="contact-form">
-                    <div class="row">
-                        <div class="col-md-4 span-1-of-3">
-                            <label for="name">Name</label>
-                        </div><br>
-                        <div class="col span-2-of-3">
-                            <input type="text" name="name" id="name" placeholder="Your name" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 span-1-of-3">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="email" name="email" id="email" placeholder="Your email" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label for="find-us">How did you find us?</label>
-                        </div>
-                        <div class="col-md-4 span-2-of-3">
-                            <select name="find-us" id="find-us">
-                                <option value="friends" selected>Friends</option>
-                                <option value="search">Search engine</option>
-                                <option value="ad">Advertisement</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label>Drop us a line</label>
-                        </div>
-                        <div class="col-md-4 span-2-of-3">
-                            <textarea name="message" placeholder="Your message"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col span-1-of-3">
-                            <label>&nbsp;</label>
-                        </div>
-                        <div class="col-md-4 span-2-of-3">
-                            <input type="submit" value="Send it!">
-                        </div>
-                    </div>
 
-                </form>
-
-            </div>
-        </section>
 
         <di class="fab " @click="checkout()" >
              <i class="bi bi-cart3" style="color: white; font-size: 25pt;"></i><span style="color: white; font-size: 18pt;"

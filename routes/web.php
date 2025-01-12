@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\HomeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,7 @@ Route::get('/{detalhe?}', function () {
 Route::get('/', function () {
     return   view('home');
 });
+
 
 
 require __DIR__.'/auth.php';

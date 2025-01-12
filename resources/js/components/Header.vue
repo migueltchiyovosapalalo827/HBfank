@@ -9,17 +9,7 @@
               </li>
             </ul>
 
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-              <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                  <button class="btn btn-navbar" type="submit">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
+
              <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
 
@@ -74,26 +64,10 @@ export default {
  },
 
 mounted() {
-    Echo.private(`App.Models.User.${this.user.id}`)
-    .notification((notification) => {
-     let pedido =  notification.data.pedido;
-    $(document).Toasts('create', {
-        position: 'bottomRight',
-        icon: 'fas fa-envelope fa-lg',
-        title: 'Encomenda',
-        subtitle: this.formatDate(pedido.created_at),
-        body: `O cliente  ${pedido.cliente.nome}  Fez um novo pedido. `
-      })
-      this.addNotification(pedido);
-    });
+
 },
 methods: {
-    ...mapActions(['removeAllNotification','addNotification','removeNotification']),
-   readNotification(item){
-      let notification = item;
-      this.removeNotification(item);
-      router.push(`/pedido/${notification.id}`)
-    },
+
 },
 }
 </script>

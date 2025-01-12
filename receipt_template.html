@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            max-width: 200px;
+        }
+        .receipt-details {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            font-weight: bold;
+            text-align: right;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="path/to/your/logo.png" alt="Company Logo" class="logo">
+            <h1>Order Receipt</h1>
+        </div>
+
+        <div class="receipt-details">
+            <p><strong>Order Number:</strong> #12345</p>
+            <p><strong>Date:</strong> May 1, 2023</p>
+            <p><strong>Customer:</strong> John Doe</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product A</td>
+                    <td>2</td>
+                    <td>$25.00</td>
+                    <td>$50.00</td>
+                </tr>
+                <tr>
+                    <td>Product B</td>
+                    <td>1</td>
+                    <td>$30.00</td>
+                    <td>$30.00</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total">Subtotal</td>
+                    <td>$80.00</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total">Tax (10%)</td>
+                    <td>$8.00</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total">Total</td>
+                    <td>$88.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p>Thank you for your purchase!</p>
+            <p>If you have any questions, please contact us at support@example.com</p>
+        </div>
+    </div>
+</body>
+</html>

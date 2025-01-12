@@ -1,121 +1,134 @@
 <template>
-    <div class="page">
-        <main>
-            <nav class="navbar menu navbar-expand-lg navbar-dark" aria-label="Tenth navbar example">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Never expand</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="bi bi-menu-up btn-icone"></i>
-                    </button>
+    <div class="bg-gray-200 min-vh-100">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <router-link to="/" class="nav-link">INICIO</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link to="/publicidade/promossoes" class="nav-link">Publicidades</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Campaigns Section -->
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="row align-items-center product-card">
+                        <div class="col-md-6 text-center">
+                            <img :src="`${imangen}`" class="imagemdetalhe img-fluid" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h1 class="lead titulo-detalhe">{{producto.nome}}</h1>
+                            <br>
+                            <p class="desc">Preço: {{producto.preco}} AKZ</p>
+                            <br>
+                            <p class="desc">Descrição: {{producto.descricao}}</p>
 
-                    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-                        <ul class="navbar-nav">
-                            <li class="nav-item nav-items">
-                                <a class="nav-link" href="index.html">INICIO</a>
-                            </li>
-                            <li class="nav-item nav-items">
-                                <a class="nav-link" href="#">MENU</a>
-                            </li>
-                            <li class="nav-item nav-items">
-                                <a class="nav-link" href="#">SOBRE</a>
-                            </li>
-                            <li class="nav-item nav-items">
-                                <a class="nav-link" href="#">CONTACTOS</a>
-                            </li>
-                            <li class="nav-item nav-items dropdown menu-perfil">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                        </ul>
+                            <a href="#" class="btn btn-color mb-2" @click="addCartItem(producto)">Adicionar ao carrinho</a>
+                            <a href="#" class="btn btn-danger mb-2" @click="removeCartItem(producto)">remover do carrinho</a>
+                        </div>
                     </div>
                 </div>
-            </nav>
-
-<div class="col-md-12 px-lg-5">
-                <div class="row  px-lg-5" style="width: 100%;">
-                    <div class="col-md-6">
-                        <img src="/storage/imagens/Cachorro quentecachorro-quente-com-mostarda-amarela-e-ketchup-na-tabua-de-madeira_93675-89324.webp" width="500" height="500" class="imagemdetalhe" alt="">
-                    </div>
-                    <div class="col-md-6 p-5">
-                        <h1 class="lead titulo-detalhe">{{producto.nome}}</h1>
-                        <br>
-                        <p class="desc">Preço</p>
-                        <h1 class="preco-detalhe">{{producto.preco}} AKZ</h1>
-                        <br>
-                        <p class="desc">Ingredientes</p>
-                        <div class="ingred">
-                            {{producto.descrecao}}
-                        </div>
-                        <a href="#" class="btn btn-color mb-2" @click="addCartItem(producto)">Adicionar ao carrinho</a>
-                        <a href="#" class="btn btn-danger mb-2" @click="removeCartItem(producto)">remover do  carrinho</a>
-                    </div>
-                   </div>
-
             </div>
-            </main>
-
-
-        <div class="col-md-12 myfooter">
-            <div class="container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
-                    <ul class="nav col-md-6 justify-content-start">
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                      </ul>
-
-                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook"  style="color: rgb(177, 177, 177); font-size: 15pt;"></i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-whatsapp"  style="color: rgb(177, 177, 177); font-size: 15pt;"></i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram"  style="color: rgb(177, 177, 177); font-size: 15pt;"></i></a></li>
-                    </ul>
-                  </footer>
-            </div>
-          </div>
-
+        </div>
     </div>
 </template>
+
 <script>
-
-
-
 import HomeMain from'@/Layouts/HomeMain.vue'
-import { mapActions , mapGetters} from 'vuex';
+import { mapActions } from 'vuex';
 import axios from 'axios';
+
 export default {
   name: 'CartListItem',
-  components:{
-   HomeMain
+  components: {
+    HomeMain
   },
-
-data() {
-        return {
-          producto:{}
-        }
-    },
-    mounted() {
-   this.getCartItem(this.$route.params.id);
-    },
-
+  data() {
+    return {
+      producto: {},
+      imangen: ""
+    }
+  },
+  mounted() {
+    this.getCartItem(this.$route.params.id);
+  },
   methods: {
     ...mapActions([
       'addCartItem',
       'removeCartItem'
     ]),
-    getCartItem(id){
- axios.get(`/api/producto/show/${id}`).then((response)=>{
-   this.producto = response.data.data;
-   console.log(this.producto.productoimagens[0].url);
-    });
+    getCartItem(id) {
+      axios.get(`/api/producto/show/${id}`).then((response) => {
+        this.producto = response.data.data;
+        this.imangen = this.producto.productoimagens[0].url;
+        console.log(this.producto);
+      });
     }
   }
 }
 </script>
+
+<style scoped>
+.bg-gray-200 {
+    background-color: #e2e2e2;
+    /* Cor de fundo cinza */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 1.2em;
+}
+
+.imagemdetalhe {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-card {
+    background-color: #333; /* Background cinza escuro */
+    border: 2px solid #555; /* Bordas destacadas */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    color: #fff; /* Texto branco para contraste */
+}
+
+.titulo-detalhe {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.preco-detalhe {
+    font-size: 1.5em;
+    color: #ddd;
+}
+
+.desc {
+    font-size: 1.2em;
+}
+
+.ingred {
+    margin-bottom: 20px;
+}
+
+.btn-color {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+</style>

@@ -39,6 +39,7 @@ class Logincontroller extends BaseController
             $user = User::with('empregado','roles')->find(Auth::user()->id);
             if (empty($request->device_name)) {
                 # code...
+
                 $request->session()->regenerate();
 
                 $token =  csrf_token();

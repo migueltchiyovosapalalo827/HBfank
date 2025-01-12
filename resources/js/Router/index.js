@@ -1,6 +1,10 @@
-import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router';
+import {
+    createRouter,
+    createWebHistory,
+    RouteRecordRaw
+} from 'vue-router';
 import Login from '@/Pages/Auth/Login';
-import  Dashboard from '@/Pages/Dashboard';
+import Dashboard from '@/Pages/Dashboard';
 import store from '@/store/index';
 import Home from '@/Pages/Home';
 import Users from '@/Pages/Users';
@@ -16,153 +20,184 @@ import Pos from '@/Pages/pos';
 import Factura from '@/Pages/Factura';
 import Historico from '@/Pages/Historico';
 import Pedido from '@/Pages/pedido';
+import Pedidos from '@/Pages/Pedidos';
 import CartListItem from '@/Pages/Cart_List_Item';
+import Register from '@/Pages/Register';
+import AdminCampaigns from '@/Pages/AdminCampaigns';
+import PublicCampaigns from '@/Pages/PublicCampaigns';
+import Reporter from '@/Pages/Reporter';
 const routes = [
 
     {
         path: '/admin',
-       name: 'Dashboard',
-                component: Dashboard,
+        name: 'Dashboard',
+        component: Dashboard,
         meta: {
             requiresAuth: true
-        } },
+        }
+    },
 
-           {
-                path: '/users',
-                name: 'Users',
-                component:Users,
-                meta: {
-                    requiresAuth: true
-                }
-            },
-           {
-                path: '/permissao',
-                name: 'Permission',
-                component: Permission,
-                meta: {
-                    requiresAuth: true
-                }
-            },
-         {
-                path: '/roles',
-                name: 'Roles',
-                component: Roles,
-                meta: {
-                    requiresAuth: true
-                }
-            },
-            {
-                path: '/profile',
-                name: 'Profile',
-                component: Profile,
-                meta: {
-                    requiresAuth: true
-                }
-            },
+    {
+        path: '/users',
+        name: 'Users',
+        component: Users,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/permissao',
+        name: 'Permission',
+        component: Permission,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/roles',
+        name: 'Roles',
+        component: Roles,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: Profile,
+        meta: {
+            requiresAuth: true
+        }
+    },
 
-            {
-                path:'/cidades',
-                name:'Cidades',
-                component:Cidade,
-                meta:{
-                    requiresAuth:true
-                }
-            }
-            ,
-            {
-                path:'/bairros',
-                name:'Bairros',
-                component:Bairro,
-                meta:{
-                    requiresAuth:true
-                }
-            }
-            ,
-            {
-                path:'/categorias',
-                name:'Categorias',
-                component:Categorias,
-                meta:{
-                    requiresAuth:true
-                }
-            },
-            {
-                path:'/productos',
-                name:'Productos',
-                component:Productos,
-                meta:{
-                    requiresAuth:true
-                }
-            },
-            {
-                path:'/clientes',
-                name:'Clientes',
-                component:Clientes,
-                meta:{
-                    requiresAuth:true
-                }
-            }
-            ,
-            {
-                path:'/pos',
-                name:'Pos',
-                component:Pos,
-                meta:{
-                    requiresAuth:true
-                }
-            },
-            {
-                path:'/factura/:invoice_id',
-                name:'factura',
-                component:Factura,
-                meta:{
-                    requiresAuth:true
-                }
-            },
+    {
+        path: '/cidades',
+        name: 'Cidades',
+        component: Cidade,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/bairros',
+        name: 'Bairros',
+        component: Bairro,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/categorias',
+        name: 'Categorias',
+        component: Categorias,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/productos',
+        name: 'Productos',
+        component: Productos,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/clientes',
+        name: 'Clientes',
+        component: Clientes,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/pos',
+        name: 'Pos',
+        component: Pos,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/factura/:invoice_id',
+        name: 'factura',
+        component: Factura,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/pedidos',
+        name: 'Pedidos',
+        component: Pedidos,
+        meta: {
+            requiresAuth: true
+        }
+    },
 
-            {
-                path:'/pedido/:pedido_id',
-                name:'/pedido',
-                component:Pedido,
-                meta:{
-                    requiresAuth:true
-                }
-            },
 
-            {
-                path:'/historico',
-                name:'Historico',
-                component:Historico,
-                meta:{
-                    requiresAuth:true
-                }
-            },
-     {
-            path: '/',
-                name: 'home',
-                component:Home,
-                meta: {
-                    requiresUnauth: true
-                }
-          },
-          {
-            path: '/detalhe/:id',
-                name: 'detalhe',
-                component:CartListItem,
-                meta: {
-                    requiresUnauth: true
-                }
-          },
-       {
+    {
+        path: '/pedido/:pedido_id',
+        name: '/pedido',
+        component: Pedido,
+        meta: {
+            requiresAuth: true
+        }
+    },
+
+    {
+        path: '/historico',
+        name: 'Historico',
+        component: Historico,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    //campanha publicitaria
+    {
+        path: '/publicidades',
+        name: 'publicidade',
+        component: AdminCampaigns,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    //relatorio
+    {
+        path: '/relatorios',
+        name: 'relatorios',
+        component: Reporter,
+        meta: {
+            requiresAuth: true
+        }
+    },
+
+    {
+        path: '/',
+        name: 'home',
+        component: Home,
+        meta: {
+            requiresUnauth: true
+        }
+    },
+    {
+        path: '/detalhe/:id',
+        name: 'detalhe',
+        component: CartListItem,
+        meta: {
+            requiresUnauth: true
+        }
+    },
+    {
         path: '/admin/Login',
         name: 'Login',
         component: Login,
         meta: {
             requiresUnauth: true
         }
-     },
-    /*{
-        path: '/register',
+    },
+    {
+        path: '/admin/register',
         name: 'Register',
         component: Register,
         meta: {
@@ -170,26 +205,27 @@ const routes = [
         }
     },
     {
-        path: '/forgot-password',
-        name: 'ForgotPassword',
-        component: ForgotPassword,
-        meta: {
-            requiresUnauth: true
-        }
-    },
-    {
-        path: '/recover-password',
-        name: 'RecoverPassword',
-        component: RecoverPassword,
-        meta: {
-            requiresUnauth: true
-        }
-    },
-    {
-        path: '/privacy-policy',
-        name: 'RecoverPassword',
-        component: PrivacyPolicy
-    },*/
+         path: '/publicidade/promossoes',
+         name: 'Promossoes',
+         component: PublicCampaigns,
+         meta: {
+             requiresUnauth: true
+         }
+     }
+     /*
+     {
+         path: '/recover-password',
+         name: 'RecoverPassword',
+         component: RecoverPassword,
+         meta: {
+             requiresUnauth: true
+         }
+     },
+     {
+         path: '/privacy-policy',
+         name: 'RecoverPassword',
+         component: PrivacyPolicy
+     },*/
 
 ];
 

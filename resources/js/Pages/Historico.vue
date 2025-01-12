@@ -43,7 +43,7 @@
                                 <tr v-for="(data, index) in transactions" :key="data.id">
                                     <td>{{ index +1}}</td>
                                     <td>{{ data.cliente.nome }}</td>
-                                    <td>Akz: {{ numberFormat(data.pagamento.valor) }}</td>
+                                    <td>Akz: {{ numberFormat(data.pagamento?.valor) }}</td>
                                     <td>{{ formatDate(data.created_at) }}</td>
                                     <td>
                                         <router-link  :to="{ path: `/factura/${data.id}` }" class="btn btn-primary btn-sm">ver factura</router-link>

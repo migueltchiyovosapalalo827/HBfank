@@ -27,6 +27,14 @@ Route::middleware('auth:sanctum')->post('/logout', [App\Http\Controllers\Api\Log
 Route::post('/login', [App\Http\Controllers\Api\Logincontroller::class,'authenticate']);
 Route::get('/producto/all',[App\Http\Controllers\Api\ProductoController::class,'all']);
 Route::get('/producto/show/{id}',[App\Http\Controllers\Api\ProductoController::class,'show']);
+Route::get('/bairros/all',[App\Http\Controllers\Api\BairroController::class,'all']);
+Route::post('/cliente/create', [App\Http\Controllers\Api\ClienteController::class, 'store']);
+Route::get('/campaigns', [App\Http\Controllers\Api\AdvertisementController::class, 'index']);
+//saleReporter post
+Route::post('/saleReporter', [App\Http\Controllers\Api\PedidoController::class, 'relatorio']);
+Route::get('/pedido/factura/{pedido_id}', [App\Http\Controllers\Api\PedidoController::class, 'gerarFactura']);
+
+
 Route::middleware('auth:sanctum')->group(function()
 {
     # code...
@@ -42,6 +50,9 @@ Route::middleware('auth:sanctum')->group(function()
     Route::get('/pedido/show/{pedido_id}',[App\Http\Controllers\Api\PedidoController::class,'show']);
     Route::get('/pedidos/history',[App\Http\Controllers\Api\PedidoController::class,'history']);
     Route::get('/home',[App\Http\Controllers\Api\HomeController::class,'index']);
+    Route::get('/pedidos',[App\Http\Controllers\Api\PedidoController::class,'index']);
+    Route::get('/pedidos/atender/{pedido_id}', [App\Http\Controllers\Api\PedidoController::class, 'pedidoAceite']);
+
     Route::apiResources(['role' => Api\RoleController::class,
                         'permission' => Api\PermissionController::class,
                         'user' => Api\UserController::class,
@@ -49,7 +60,8 @@ Route::middleware('auth:sanctum')->group(function()
                         'bairro' => Api\BairroController::class,
                         'categoria'=>  Api\CategoriaController::class,
                         'producto' =>    Api\ProductoController::class,
-                        'cliente' => Api\ClienteController::class
+                        'cliente' => Api\ClienteController::class,
+                        'advertisements'=> Api\AdvertisementController::class
     ]);
 });
 

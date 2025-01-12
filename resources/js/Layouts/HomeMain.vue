@@ -1,9 +1,9 @@
 <template>
-   <div class="page">
+    <div class="page">
         <main>
             <nav class="navbar menu navbar-expand-lg navbar-dark fixed-top" aria-label="Tenth navbar example">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Never expand</a>
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -13,52 +13,39 @@
                     <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">INICIO</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">MENU</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">SOBRE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">CONTACTOS</a>
+                                <router-link to="/" class="nav-link">INICIO</router-link>
                             </li>
 
-                            <li class="nav-item nav-items dropdown menu-perfil">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
-                                    aria-expanded="false"><i class="bi bi-person-circle"></i></a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <router-link to="/publicidade/promossoes" class="nav-link"> Publicidades</router-link>
+
                             </li>
+
+
+
                         </ul>
                     </div>
                 </div>
             </nav>
 
         </main>
-         <slot></slot>
+        <slot></slot>
         <div class="col-md-12 myfooter">
             <div class="container">
                 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
-                    <ul class="nav col-md-6 justify-content-start">
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                    </ul>
 
-                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook"
+
+                    <ul class="nav col-md-12 justify-content-end list-unstyled d-flex">
+                        <li class="ms-2"><a class="text-muted" href="#"><i class="bi bi-facebook"
                                     style="color: rgb(177, 177, 177); font-size: 15pt;"></i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-whatsapp"
+                        <li class="ms-2"><a class="text-muted" href="#"><i class="bi bi-whatsapp"
                                     style="color: rgb(177, 177, 177); font-size: 15pt;"></i></a></li>
-                        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram"
+                        <li class="ms-2"><a class="text-muted" href="#"><i class="bi bi-instagram"
                                     style="color: rgb(177, 177, 177); font-size: 15pt;"></i></a></li>
+                        <li class="ms-4"><a class="text-muted" href="#"><i class="bi bi-geo-alt"
+                                    style="color: rgb(177, 177, 177); font-size: 15pt;"></i> Bairro do Alto-Liro
+                                /Lobito-Benguela-Angola</a></li>
+
                     </ul>
                 </footer>
             </div>
@@ -70,11 +57,9 @@
 <script>
 import { computed } from 'vue'
 export default {
- setup() {
-    const user =  computed(() => store.getters['auth/user'])
-    return { user }
-  }
+    setup() {
+        const user = computed(() => store.getters['auth/user'])
+        return { user }
+    }
 }
 </script>
-
-
